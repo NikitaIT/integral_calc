@@ -2,11 +2,14 @@ TEMPLATE = app
 CONFIG += console c++14
 CONFIG -= app_bundle
 CONFIG -= qt
-
 SOURCES += main.cpp \
-    integral.cpp
+    parser/parser.cpp \
+    calc/integralcalc.cpp \
+    calc/calculator.cpp
 
 HEADERS += \
-    integral.h \
-    include_lib.h
+    include_lib.h \
+    calc/integralcalc.h \
+    calc/calculator.h \
+    parser/parser_q.h
 

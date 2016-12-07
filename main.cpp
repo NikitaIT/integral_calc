@@ -1,4 +1,8 @@
-#include "include_lib.h"
+
+#include "calc/integralcalc.h"
+#include "parser/parser_q.h"
+#include "calc/calculator.h"
+
 using namespace std;
 
 
@@ -15,10 +19,12 @@ int f(int &arr){cout <<arr;}
 int main()
 {
     cout << "Integral calc!" << endl;
-    string input =""; //"a = SD(123 - b * c + d, !e, g)";
+    string input ="";
+    //sin(123 - 3 * 5 + x/cos(9))
+    //integral[0,5] sin(123 - 3 * 5 + x/cos(9))
     printf("input: %s\n", input.c_str());
     cout << "print func:";
-    getline(cin,input);
+    //getline(cin,input);
     Calculator* p_calculator = 0;
     char method='1';
     while (method != '0') {
@@ -32,11 +38,12 @@ int main()
         } else {break;}
         method='1';
         p_calculator->setInputString(input.c_str());
-        cout <<"0.716337814536774"<< " : expected value" <<endl;
+        cout <<"integral_0^5 sin(123-3 5+x/(cos(9))) dx = cos(9) (cos(108)-cos(108+5 sec(9))) ≈ -0.70578"<< " : expected value" <<endl;
         cout << p_calculator->calculate(0,5)<< endl;
     }
 
     delete p_calculator;
+
 
 
     //    cout <<Identity(zz)<< endl; // 3
@@ -73,11 +80,16 @@ int main()
 //          function<double(function<double(double)>, double)> lambdaGen3 = [](function<double(double)> val, double a)->double {return val(a); };
 //          cout << lambdaGen3(x, 5)<< endl;
 
-    auto y = [](auto f) {return f+1; };
-    auto x = [](auto f) {return f; };
-    auto s = x(y);
-    cout <<s(9)<< endl;
-
+    int qy = 100;
+    int qy1 = 10;
+    auto y = [&](auto &a,auto b) {return a+qy+b; };
+    auto rez = y(qy1,0);
+    auto x = [&](auto f) {return f; };
+    auto s = x(rez);
+    cout <<s<< endl;
+    qy = 200;
+    qy1 = 2000;
+    cout <<s<< endl;
     auto lambdaGen = [](auto func, double a)->double {return func(a); };
     cout << lambdaGen(x, 7) << endl;
 

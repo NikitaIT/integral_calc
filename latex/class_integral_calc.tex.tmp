@@ -1,0 +1,17 @@
+\hypertarget{class_integral_calc}{}\section{Integral\+Calc Class Reference}
+\label{class_integral_calc}\index{Integral\+Calc@{Integral\+Calc}}
+
+
+Inheritance diagram for Integral\+Calc\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_integral_calc_ae079c475fe374dc4f70ebaf252aa9595}{}\label{class_integral_calc_ae079c475fe374dc4f70ebaf252aa9595} 
+virtual double {\bfseries calculate} (double a, double b, int n=500, \hyperlink{class_parser}{Parser} \&parser= $\ast$new \hyperlink{class_parser}{Parser}(\char`\"{}\char`\"{}))=0
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+calc/integralcalc.\+h\end{DoxyCompactItemize}
